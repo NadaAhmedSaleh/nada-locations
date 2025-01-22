@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import PageLayout from "../components/PageLayout/PageLayout";
+import PageLayout from "../components/pageLayout/PageLayout";
 import { Paginator } from "primereact/paginator";
+import AllLocationsCard from "../components/dashBoardCards/allLocationsCard/AllLocationsCard";
 
 export default function Locations() {
   const [page, setPage] = useState(1); // Page index starts at 0 in PrimeReact
@@ -25,7 +26,9 @@ export default function Locations() {
         />
       }
     >
-      locations content
+      <div >
+        all locations
+      </div>
     </PageLayout>
   );
 }

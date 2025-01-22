@@ -1,5 +1,6 @@
 import styles from "./dashboard.module.scss";
-import PageLayout from "../components/PageLayout/PageLayout";
+import PageLayout from "../components/pageLayout/PageLayout";
+import AllLocationsCard from "../components/dashBoardCards/allLocationsCard/AllLocationsCard";
 
 export default function Dashboard() {
   return (
@@ -13,7 +14,12 @@ export default function Dashboard() {
         />
       }
     >
-      dashboard content
+      <div className={styles.dashboardGrid}>
+        <AllLocationsCard locationsCount={1234} />
+        <div className={styles.gridItem}>2</div>
+        <div className={styles.gridItem}>3</div>
+        <div className={styles.gridItem}>4</div>
+      </div>
     </PageLayout>
   );
 }
