@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+.pageLayout {
+    display: flex;
+    flex-direction: column;
+    background-color: $page-layout-frame;
+    height: 100vh;
+    padding: 1rem;
+
+    .pageName {
+        font-family: "Arial", sans-serif;
+        font-size: 1.2rem;
+        color: $page-name;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+        width: 100%;
+    }
+
+    .subContainer {
+        background-color: $page-layout-sub-container;
+        width: 100%;
+        height: 100%;
+        padding: 2em;
+
+        .header {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .title {
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+                gap: 0.75em;
+                h1 {
+                    font-family: "Anton", sans-serif; // update this
+                    color: black;
+                    font-size: 3em;
+                }
+                p {
+                    font-family: "Arial", sans-serif;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    color: $page-name;
+                }
+            }
+        }
+    }
+}
