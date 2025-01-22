@@ -5,7 +5,7 @@
     flex-direction: column;
     background-color: $page-layout-frame;
     height: 100vh;
-    padding: 1rem;
+    padding: 1em;
 
     .pageName {
         font-family: "Arial", sans-serif;
@@ -28,19 +28,24 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            gap: 2%;
+            flex-wrap: wrap;
+
             .title {
                 display: flex;
                 flex-direction: row;
                 align-items: baseline;
                 gap: 0.75em;
+
                 h1 {
-                    font-family: "Anton", sans-serif; // update this
+                    font-family: "Anton", sans-serif;
                     color: black;
-                    font-size: 3em;
+                    font-size: 5vw;
                 }
+
                 p {
                     font-family: "Arial", sans-serif;
-                    font-size: 2rem;
+                    font-size: 3vh;
                     font-weight: bold;
                     color: $page-name;
                 }
