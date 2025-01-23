@@ -7,6 +7,14 @@
     color: white;
     border-radius: 2vw;
     padding: 2vw;
+    cursor: pointer;
+}
+.allLocationsCard:hover {
+    background-color: $dark-grey;
+    .locationsCountContainer {
+        box-sizing: border-box;
+        border: 2px solid $blurred-black;
+    }
 }
 .locationsCountContainer {
     background-color: $dark-grey;

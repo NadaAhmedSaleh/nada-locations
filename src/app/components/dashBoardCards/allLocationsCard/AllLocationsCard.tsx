@@ -1,9 +1,17 @@
+"use client";
 import React from "react";
 import styles from "./AllLocationsCard.module.scss";
+import { useRouter } from "next/navigation";
 
 const AllLocationsCard = ({ locationsCount }: { locationsCount: number }) => {
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    router.push("/locations");
+  };
+
   return (
-    <div className={styles.allLocationsCard}>
+    <div className={styles.allLocationsCard} onClick={handleRedirect}>
       <div className={styles.locationsCountContainer}>
         <h1>{locationsCount}</h1>
         <p>Total locations</p>
