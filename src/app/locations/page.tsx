@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PageLayout from "../components/pageLayout/PageLayout";
 import { Paginator } from "primereact/paginator";
-import AllLocationsCard from "../components/dashBoardCards/allLocationsCard/AllLocationsCard";
+import LocationsTable from "./locationsTable/LocationsTable";
 
 export default function Locations() {
-  const [page, setPage] = useState(1); // Page index starts at 0 in PrimeReact
+  const [page, setPage] = useState(1);
 
   const handlePageChange = (e: any) => {
     setPage(e.first); // Update the page state with the new `first` value
@@ -26,9 +26,7 @@ export default function Locations() {
         />
       }
     >
-      <div >
-        all locations
-      </div>
+      <LocationsTable />
     </PageLayout>
   );
 }
