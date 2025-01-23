@@ -1,0 +1,12 @@
+.statusCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+ 
+}
+
+.buttonContainer {
+    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
