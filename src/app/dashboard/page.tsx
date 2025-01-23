@@ -2,6 +2,7 @@ import styles from "./dashboard.module.scss";
 import PageLayout from "../components/pageLayout/PageLayout";
 import AllLocationsCard from "../components/dashBoardCards/allLocationsCard/AllLocationsCard";
 import StatusCard from "../components/dashBoardCards/statusCard/StatusCard";
+import RatingCard from "../components/dashBoardCards/ratingCard/RatingCard";
 
 export default function Dashboard() {
   return (
@@ -19,7 +20,7 @@ export default function Dashboard() {
         <AllLocationsCard locationsCount={1234} />
         <StatusCard />
         <div className={styles.gridItem}>3</div>
-        <div className={styles.gridItem}>4</div>
+        <RatingCard />
       </div>
     </PageLayout>
   );

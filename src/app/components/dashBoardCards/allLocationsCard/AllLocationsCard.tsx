@@ -1,5 +1,4 @@
 import React from "react";
-import { Card } from "primereact/card";
 import styles from "./AllLocationsCard.module.scss";
 
 const AllLocationsCard = ({ locationsCount }: { locationsCount: number }) => {
