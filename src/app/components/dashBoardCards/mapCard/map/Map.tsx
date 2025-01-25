@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import mapboxgl, { Map } from "mapbox-gl";
 import styles from "./Map.module.scss";
 
@@ -9,15 +9,31 @@ mapboxgl.accessToken =
 
 const MapCard: React.FC = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
+  const [userLocation, setUserLocation] = useState<[number, number] | null>(
+    null
+  );
 
   useEffect(() => {
-    if (!mapContainerRef.current) return;
+    // Get user's current position
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setUserLocation([position.coords.longitude, position.coords.latitude]);
+      },
+      (error) => {
+        console.error("Error getting user location:", error);
+        setUserLocation([0, 0]);
+      }
+    );
+  }, []);
 
-    // Initialize the map
+  useEffect(() => {
+    if (!mapContainerRef.current || !userLocation) return;
+
+    // Initialize the map at user's location
     const map: Map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/dark-v10", // Mapbox style
-      center: [0, 0],
+      style: "mapbox://styles/mapbox/dark-v10",
+      center: userLocation,
       zoom: 1,
       projection: "globe",
       scrollZoom: false,
@@ -27,13 +43,12 @@ const MapCard: React.FC = () => {
     map.on("style.load", () => {
       map?.getStyle()?.layers?.forEach((layer) => {
         if (layer.type === "symbol") {
-          map.removeLayer(layer.id); // Remove symbol layers (labels and icons)
+          map.removeLayer(layer.id);
         }
       });
     });
-
     return () => map.remove();
-  }, []);
+  }, [userLocation]);
 
   return (
     <div className={styles.mapCardContainer}>
