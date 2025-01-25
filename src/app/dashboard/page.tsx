@@ -13,8 +13,8 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchTotalLocations = async () => {
       try {
-        const { locations } = await fetchLocations(1, 1);
-        setLocationsCount(locations.total);
+        const { total } = await fetchLocations(1, 1);
+        setLocationsCount(total);
       } catch (error) {
         console.error("Failed to fetch locations count:", error);
         setLocationsCount(0);
