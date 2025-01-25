@@ -2,13 +2,14 @@
 import { useState } from "react";
 import { Paginator } from "primereact/paginator";
 import PageLayout from "../components/pageLayout/PageLayout";
-import LocationsTable from "./locationsTable/LocationsTable";
+import { LocationsTable } from "./locationsTable/LocationsTable";
 export default function Locations() {
-  const [page, setPage] = useState(0); // Zero-based index
-  const rows = 10; // Records per page
+  const [page, setPage] = useState(0);
+  const rows = 15;
+  const [totalRecords, setTotalRecords] = useState(0);
 
   const handlePageChange = (e: any) => {
-    setPage(e.page); // Update to the new page index
+    setPage(e.page);
   };
 
   return (
@@ -18,14 +19,18 @@ export default function Locations() {
         <Paginator
           first={page * rows}
           rows={rows}
-          totalRecords={1000} // Replace with actual totalRecords from server
+          totalRecords={totalRecords} // Fetch from backend
           onPageChange={handlePageChange}
           template={{ layout: "PrevPageLink CurrentPageReport NextPageLink" }}
           currentPageReportTemplate="{currentPage} of {totalPages} pages"
         />
       }
     >
-      <LocationsTable page={page + 1} rows={rows} />
+      <LocationsTable
+        page={page + 1}
+        rows={rows}
+        setTotalRecords={setTotalRecords}
+      />
     </PageLayout>
   );
 }

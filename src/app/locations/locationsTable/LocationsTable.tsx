@@ -13,22 +13,29 @@ const siteNameTemplate = (rowData: any) => (
   <span className={styles.siteName}>{rowData.name}</span>
 );
 
-const LocationsTable = ({ page, rows }: { page: number; rows: number }) => {
+export const LocationsTable = ({
+  page,
+  rows,
+  setTotalRecords,
+}: {
+  page: number;
+  rows: number;
+  setTotalRecords: any;
+}) => {
   const [locations, setLocations] = useState([]);
-  const [totalRecords, setTotalRecords] = useState(0);
 
   useEffect(() => {
     const loadLocations = async () => {
       try {
-        const data = await fetchLocations(page, rows);
-        setLocations(data.locations);
-        setTotalRecords(data.total);
+        const { locations, total } = await fetchLocations(page, rows); // API call
+        setLocations(locations);
+        setTotalRecords(total);
       } catch (error) {
         console.error("Failed to fetch locations:", error);
       }
     };
     loadLocations();
-  }, [page, rows]);
+  }, [page, rows, setTotalRecords]);
 
   return (
     <div className={styles.locationsTableContainer}>
@@ -43,5 +50,3 @@ const LocationsTable = ({ page, rows }: { page: number; rows: number }) => {
     </div>
   );
 };
-
-export default LocationsTable;
