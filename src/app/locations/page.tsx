@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { Paginator } from "primereact/paginator";
-import PageLayout from "../components/pageLayout/PageLayout";
 import { LocationsTable } from "./locationsTable/LocationsTable";
+import PageLayout from "../components/pageLayout/PageLayoutComponent";
 export default function Locations() {
   const [page, setPage] = useState(0);
   const rows = 15;
@@ -19,7 +19,7 @@ export default function Locations() {
         <Paginator
           first={page * rows}
           rows={rows}
-          totalRecords={totalRecords} // Fetch from backend
+          totalRecords={totalRecords || 1} //  to handle no records case
           onPageChange={handlePageChange}
           template={{ layout: "PrevPageLink CurrentPageReport NextPageLink" }}
           currentPageReportTemplate="{currentPage} of {totalPages} pages"

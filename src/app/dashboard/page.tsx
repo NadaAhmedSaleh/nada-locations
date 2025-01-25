@@ -1,6 +1,6 @@
 "use client";
 import styles from "./dashboard.module.scss";
-import PageLayout from "../components/pageLayout/PageLayout";
+import PageLayout from "../components/pageLayout/PageLayoutComponent";
 import AllLocationsCard from "../components/dashBoardCards/allLocationsCard/AllLocationsCard";
 import StatusCard from "../components/dashBoardCards/statusCard/StatusCard";
 import RatingCard from "../components/dashBoardCards/ratingCard/RatingCard";
