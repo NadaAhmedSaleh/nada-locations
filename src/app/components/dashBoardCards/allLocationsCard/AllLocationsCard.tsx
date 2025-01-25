@@ -3,7 +3,11 @@ import React from "react";
 import styles from "./AllLocationsCard.module.scss";
 import { useRouter } from "next/navigation";
 
-const AllLocationsCard = ({ locationsCount }: { locationsCount: number }) => {
+const AllLocationsCard = ({
+  locationsCount,
+}: {
+  locationsCount: number | string;
+}) => {
   const router = useRouter();
 
   const handleRedirect = () => {
