@@ -28,7 +28,7 @@ const columnLabels = [
   "Neuhof DE",
 ];
 
-const RiskProfile = () => {
+const RatingCardData = () => {
   return (
     <div className={styles.ratingCardData}>
       <div className={styles.valuesGrid}>
@@ -57,4 +57,4 @@ const RiskProfile = () => {
   );
 };
 
-export default RiskProfile;
+export default RatingCardData;

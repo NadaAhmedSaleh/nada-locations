@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./RatingCard.module.scss";
-import RatingText from "./hearder/ratingText/RatingText";
+import RatingText from "../../ratingText/RatingText";
 import RatingCardHeader from "./hearder/RatingCardHeader";
-import RiskProfile from "./data/RatingCardData";
+import RatingCardData from "./data/RatingCardData";
 
 const RatingCard = () => {
   return (
     <div className={styles.ratingCard}>
       <RatingCardHeader />
-      <RiskProfile />
+      <RatingCardData />
     </div>
   );
 };

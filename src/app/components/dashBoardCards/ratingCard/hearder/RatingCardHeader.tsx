@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../../styles/_variables.scss";
 import styles from "./RatingCardHeader.module.scss";
-import RatingText from "./ratingText/RatingText";
+import RatingText from "../../../ratingText/RatingText";
 import { ratingColors } from "@/app/constants/enums";
 
 const RatingCardHeader = () => {

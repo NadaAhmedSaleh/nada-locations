@@ -1,12 +1,28 @@
+@import "../../../styles/variables";
+
 .statusCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
- 
 }
 
 .buttonContainer {
-    grid-template-rows: 1fr 1fr 1fr;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
+}
+
+.piChartContainer {
+    background-color: $light-grey;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+.piChartLabelsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.piChart {
+    background-color: aqua;
 }
