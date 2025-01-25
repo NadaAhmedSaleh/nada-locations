@@ -1,6 +1,9 @@
 @import "../../../styles/variables";
 
 .statusCard {
+    margin: auto;
+    height: 25vh;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -15,6 +18,8 @@
     background-color: $light-grey;
     display: grid;
     grid-template-rows: 1fr 4fr;
+    width: 90%;
+    border-radius: 20px;
 }
 
 .piChartLabelsContainer {
@@ -23,6 +28,24 @@
     justify-content: space-around;
 }
 
+.piChartCenterTextContainer {
+    position: relative;
+}
+
 .piChart {
-    background-color: aqua;
+    height: 95%;
+    width: 95%;
+    margin: auto;
+}
+
+.centerText {
+    font-size: xx-small;
+    width: 10ch;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $blurred-black;
+    z-index: 10;
 }

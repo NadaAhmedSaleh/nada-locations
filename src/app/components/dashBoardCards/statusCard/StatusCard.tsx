@@ -4,9 +4,34 @@ import styles from "./StatusCard.module.scss";
 import CustomButton from "../customButton/CustomButton";
 import RatingText from "../../ratingText/RatingText";
 import { ratingColors } from "@/app/constants/enums";
+import { Chart } from "primereact/chart";
 const StatusCard = () => {
   const handleButtonClick = () => {
     alert("Button clicked!");
+  };
+
+  const data = {
+    labels: ["High Risk", "Medium Risk", "Low Risk"],
+    datasets: [
+      {
+        data: [38, 40, 12], // Percentages for each section
+        backgroundColor: [
+          ratingColors.VERY_HIGH,
+          ratingColors.MEDIUM,
+          ratingColors.LOW,
+        ], // Colors for each section
+      },
+    ],
+  };
+  const options = {
+    plugins: {
+      legend: {
+        display: false, // Hides the legend
+      },
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: "60%", // Creates the donut effect
   };
 
   return (
@@ -17,7 +42,15 @@ const StatusCard = () => {
           <RatingText text="Medium Risk" color={ratingColors.MEDIUM} />
           <RatingText text="Low Risk" color={ratingColors.LOW} />
         </div>
-        <div className={styles.piChart}></div>
+        <div className={styles.piChartCenterTextContainer}>
+          <Chart
+            className={styles.piChart}
+            type="doughnut"
+            data={data}
+            options={options}
+          />
+          <div className={styles.centerText}>Overall Location Status</div>
+        </div>
       </div>
       <div className={styles.buttonContainer}>
         <CustomButton label={"report"} onClick={handleButtonClick} />
