@@ -1,6 +1,6 @@
 import axiosInstance from "../axios";
 
-export const fetchLocations = async (page: number, limit: number) => {
+export const fetchLocations = async (page, limit) => {
   try {
     const response = await axiosInstance.get("/locations", {
       params: { page, limit },

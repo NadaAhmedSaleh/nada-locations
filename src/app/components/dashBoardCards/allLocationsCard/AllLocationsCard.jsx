@@ -5,8 +5,6 @@ import { useRouter } from "next/navigation";
 
 const AllLocationsCard = ({
   locationsCount,
-}: {
-  locationsCount: number | string;
 }) => {
   const router = useRouter();
 

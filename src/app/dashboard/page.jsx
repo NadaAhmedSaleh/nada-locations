@@ -8,7 +8,7 @@ import MapCard from "../components/dashBoardCards/mapCard/map/Map";
 import { useEffect, useState } from "react";
 import { fetchLocations } from "../server/apis/locations";
 export default function Dashboard() {
-  const [locationsCount, setLocationsCount] = useState<number | null>(null);
+  const [locationsCount, setLocationsCount] = useState(null);
 
   useEffect(() => {
     const fetchTotalLocations = async () => {

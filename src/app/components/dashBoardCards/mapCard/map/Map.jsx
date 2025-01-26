@@ -7,11 +7,9 @@ import styles from "./Map.module.scss";
 mapboxgl.accessToken =
   "pk.eyJ1Ijoibm9keW5vZHkiLCJhIjoiY202OXk4MmoxMGo5bDJrcXR1NjMydjYxZCJ9.oNOy1n4K_c-L6nk1UadTeA";
 
-const MapCard: React.FC = () => {
-  const mapContainerRef = useRef<HTMLDivElement>(null);
-  const [userLocation, setUserLocation] = useState<[number, number] | null>(
-    null
-  );
+const MapCard = () => {
+  const mapContainerRef = useRef(null);
+  const [userLocation, setUserLocation] = useState(null);
 
   useEffect(() => {
     // Get user's current position
@@ -30,7 +28,7 @@ const MapCard: React.FC = () => {
     if (!mapContainerRef.current || !userLocation) return;
 
     // Initialize the map at user's location
-    const map: Map = new mapboxgl.Map({
+    const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: "mapbox://styles/mapbox/dark-v10",
       center: userLocation,

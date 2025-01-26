@@ -40,7 +40,7 @@ const RatingCardData = () => {
                 key={valueIndex}
                 className={styles.oneValue}
                 style={{
-                  backgroundColor: returnRatingColor(value as ratingValues),
+                  backgroundColor: returnRatingColor(value),
                 }}
               />
             ))}

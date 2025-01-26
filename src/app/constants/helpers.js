@@ -1,6 +1,6 @@
 import { ratingColors, ratingValues } from "./enums";
 
-export const returnRatingColor = (ratingValue: ratingValues) => {
+export const returnRatingColor = (ratingValue) => {
   switch (ratingValue) {
     case ratingValues.VERY_HIGH:
       return ratingColors.VERY_HIGH;

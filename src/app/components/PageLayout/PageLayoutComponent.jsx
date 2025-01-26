@@ -5,10 +5,6 @@ const PageLayout = ({
   pageName,
   headerRightComponent,
   children,
-}: {
-  pageName: string;
-  headerRightComponent: any;
-  children: any;
 }) => {
   return (
     <div className={styles.pageLayout}>

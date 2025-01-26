@@ -9,19 +9,11 @@ import styles from "./LocationsTable.module.scss"; // Custom styles
 import "./CustomTable.scss";
 import { fetchLocations } from "@/app/server/apis/locations";
 
-const siteNameTemplate = (rowData: any) => (
+const siteNameTemplate = (rowData) => (
   <span className={styles.siteName}>{rowData.name}</span>
 );
 
-export const LocationsTable = ({
-  page,
-  rows,
-  setTotalRecords,
-}: {
-  page: number;
-  rows: number;
-  setTotalRecords: any;
-}) => {
+export const LocationsTable = ({ page, rows, setTotalRecords }) => {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {

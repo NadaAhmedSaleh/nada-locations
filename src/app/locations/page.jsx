@@ -8,7 +8,7 @@ export default function Locations() {
   const rows = 15;
   const [totalRecords, setTotalRecords] = useState(0);
 
-  const handlePageChange = (e: any) => {
+  const handlePageChange = (e) => {
     setPage(e.page);
   };
 
